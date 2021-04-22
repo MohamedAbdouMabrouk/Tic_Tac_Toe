@@ -11,8 +11,20 @@ public class Player
     }
     public void move()
     {
-        int row = Integer.parseInt(JOptionPane.showInputDialog(null, "please " + name + " enter the row number"));
-        int column = Integer.parseInt(JOptionPane.showInputDialog(null, "please " + name + " enter the column number"));
+        String row1 = JOptionPane.showInputDialog(null, "please " + name + " enter the row number");
+        String column1 = JOptionPane.showInputDialog(null, "please " + name + " enter the column number");
+        int row;
+        int column;
+        try {
+            row = Integer.parseInt(row1);
+            column = Integer.parseInt(column1);
+        }
+        catch (NumberFormatException e)
+        {
+            JOptionPane.showMessageDialog(null, "WRONG INPUT");
+            move();
+            return;
+        }
         if(row > 6 || column > 7) {
             JOptionPane.showMessageDialog(null, "Out Of Range.....Try Again");
             move();
