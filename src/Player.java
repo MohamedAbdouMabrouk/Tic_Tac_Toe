@@ -30,8 +30,8 @@ public class Player
             move();
         }
         else
-        if(Bored.spaceIsFree(row, column))
-            Bored.updateBorad(letter, row, column);
+        if(Board.spaceIsFree(row, column))
+            Board.updateBoard(letter, row, column);
         else {
             JOptionPane.showMessageDialog(null, "This is place is not free.....Try Again");
             move();

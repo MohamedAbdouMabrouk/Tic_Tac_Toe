@@ -12,22 +12,22 @@ public class main {
         int run = 0;
         while(run == 0)
         {
-            Bored.initBored();
-            Bored.printBored();
-            while (!Bored.isBoredFull())
+            Board.initBoard();
+            Board.printBoard();
+            while (!Board.isBoardFull())
             {
                 if (!Turn.isWinner('O')) {
                     X.move();
-                    Bored.printBored();
+                    Board.printBoard();
                 } else {
-                    System.out.println(O.name + " won");
+                    JOptionPane.showMessageDialog(null, O.name + " won");
                     break;
                 }
                 if (!Turn.isWinner('X')) {
                     O.move();
-                    Bored.printBored();
+                    Board.printBoard();
                 } else {
-                    System.out.println(X.name + " won");
+                    JOptionPane.showMessageDialog(null, X.name + " won");
                     break;
                 }
             }
